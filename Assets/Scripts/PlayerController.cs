@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float groundCheckRadius;
     [SerializeField] LayerMask whatIsGround;
     [SerializeField] Transform groundCheck;
+    [SerializeField] LevelManager levelManager;
 
     private bool isGrounded;
 
@@ -52,5 +53,12 @@ public class PlayerController : MonoBehaviour {
     private void doAnimations() {
         this.animator.SetFloat("Speed", Mathf.Abs(this.rigidBody.velocity.x));
         this.animator.SetBool("isGrounded", this.isGrounded);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "StreamOfConsciousness") {
+            this.levelManager.handlePlayerDeath();
+        }
     }
 }
