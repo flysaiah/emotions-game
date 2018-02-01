@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75766c3524b340a9bb3e1d8ccf8e87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  baseMoveSpeed: 4
+  platformMoveSpeedModifier: 1.5
   jumpSpeed: 12
   groundCheckRadius: 0.1
   whatIsGround:
